@@ -1590,9 +1590,9 @@ void PluginGui::buttonClicked (Button* buttonThatWasClicked)
     else if (buttonThatWasClicked == exportButton)
     {
         //[UserButtonCode_exportButton] -- add your button handler code here..
-		WildcardFileFilter wildcardFilter("*.sbi", String::empty, "SBI files");
+		WildcardFileFilter wildcardFilter("*.sbi", String(), "SBI files");
 		FileBrowserComponent browser(FileBrowserComponent::saveMode,
-			File::nonexistent,
+			File(),
 			&wildcardFilter,
 			nullptr);
 		FileChooserDialogBox dialogBox("Export to",

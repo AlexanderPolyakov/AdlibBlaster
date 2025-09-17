@@ -38,9 +38,9 @@ class PluginGui  : public AudioProcessorEditor,
                    public FileDragAndDropTarget,
                    public DragAndDropContainer,
                    public Timer,
-                   public ComboBoxListener,
-                   public SliderListener,
-                   public ButtonListener
+                   public ComboBox::Listener,
+                   public Slider::Listener,
+                   public Button::Listener
 {
 public:
     //==============================================================================

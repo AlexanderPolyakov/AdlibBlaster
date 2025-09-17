@@ -88,27 +88,27 @@ public:
 	DbxValue(std::string const& in,Etype _t) :_string(0),type(V_NONE) {SetDbxValue(in,_t);}
 	
 	/* Assigment operators */
-	DbxValue& operator= (Hex in) throw(WrongType)                { return copy(DbxValue(in));}
-	DbxValue& operator= (int in) throw(WrongType)                { return copy(DbxValue(in));}
-	DbxValue& operator= (bool in) throw(WrongType)               { return copy(DbxValue(in));}
-	DbxValue& operator= (double in) throw(WrongType)             { return copy(DbxValue(in));}
-	DbxValue& operator= (std::string const& in) throw(WrongType) { return copy(DbxValue(in));}
-	DbxValue& operator= (char const * const in) throw(WrongType) { return copy(DbxValue(in));}
-	DbxValue& operator= (DbxValue const& in) throw(WrongType)       { return copy(DbxValue(in));}
+	DbxValue& operator= (Hex in)                { return copy(DbxValue(in));}
+	DbxValue& operator= (int in)                { return copy(DbxValue(in));}
+	DbxValue& operator= (bool in)               { return copy(DbxValue(in));}
+	DbxValue& operator= (double in)             { return copy(DbxValue(in));}
+	DbxValue& operator= (std::string const& in) { return copy(DbxValue(in));}
+	DbxValue& operator= (char const * const in) { return copy(DbxValue(in));}
+	DbxValue& operator= (DbxValue const& in)       { return copy(DbxValue(in));}
 
 	bool operator== (DbxValue const & other);
-	operator bool () const throw(WrongType);
-	operator Hex () const throw(WrongType);
-	operator int () const throw(WrongType);
-	operator double () const throw(WrongType);
-	operator char const* () const throw(WrongType);
-	void SetDbxValue(std::string const& in,Etype _type = V_CURRENT) throw(WrongType);
+	operator bool () const;
+	operator Hex () const;
+	operator int () const;
+	operator double () const;
+	operator char const* () const;
+	void SetDbxValue(std::string const& in,Etype _type = V_CURRENT);
 	std::string ToString() const;
 
 private:
-	void destroy() throw();
-	DbxValue& copy(DbxValue const& in) throw(WrongType);
-	void plaincopy(DbxValue const& in) throw();
+	void destroy();
+	DbxValue& copy(DbxValue const& in);
+	void plaincopy(DbxValue const& in);
 	void set_hex(std::string const& in);
 	void set_int(std::string const&in);
 	void set_bool(std::string const& in);
